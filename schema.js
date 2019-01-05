@@ -9,6 +9,7 @@ const schema = buildSchema(`
     gender:Gender
     language:String
     email:String
+    contacts:[Contact]
     }
     
     enum Gender{
@@ -17,8 +18,18 @@ const schema = buildSchema(`
         OTHER
     }
     
+    type Contact {
+        name:String
+        gender:Gender
+    }
+    
     type Query{
         getFriend(id:ID):Friend
+    }
+    
+    input ContactInput{
+        name:String
+        gender:Gender
     }
     
     input FriendInput{
@@ -29,6 +40,7 @@ const schema = buildSchema(`
     gender:Gender
     language:String
     email:String
+    contacts:[ContactInput]
     }
     
     type Mutation {
