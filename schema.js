@@ -1,6 +1,7 @@
-import {buildSchema} from 'graphql';
+import {resolver} from './resolvers';
+import {makeExecutableSchema} from 'graphql-tools';
 
-const schema = buildSchema(`
+const typeDefs=`
     type Friend{
     id:ID
     firstName:String
@@ -46,6 +47,8 @@ const schema = buildSchema(`
     type Mutation {
         createFriend(input:FriendInput):Friend
     }
-`);
+`;
 
-export default schema;
+const schema = makeExecutableSchema({typeDefs,resolver});
+
+export {schema};
