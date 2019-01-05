@@ -16,7 +16,7 @@ const root = {friend:()=>{
         "age":26,
         "gender":"Male",
         "language":"English",
-        "email":"anil.xampr@gmail.com"
+        "emails":[{email:"anil.xampr@gmail.com"},{email:"me@me.com"}]
     }
     }};
 

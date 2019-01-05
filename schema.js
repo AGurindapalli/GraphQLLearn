@@ -8,8 +8,13 @@ const schema = buildSchema(`
     age:Int
     gender:String
     language:String
+    emails:[Email]!
+    }
+    
+    type Email{
     email:String
     }
+    
     type Query{
         friend:Friend
     }
